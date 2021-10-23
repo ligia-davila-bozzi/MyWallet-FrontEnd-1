@@ -10,7 +10,7 @@ function App() {
   return (
     <Router >
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/cadastro">
           <SignUp />
         </Route>
       </Switch>
