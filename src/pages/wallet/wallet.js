@@ -22,7 +22,9 @@ export default function Wallet() {
             .then(res => setWalletMovements(res.data))
             .catch(() => alert("Houve uma falha ao obter os registros, por favor atualize a página"));
     }, [])
-    const totalMoney = walletMovements.reduce((acc, curr) => acc + Number(curr.value), 0);
+    let totalMoney = 0;
+    if(walletMovements.length) totalMoney = walletMovements.reduce((acc, curr) => acc + Number(curr.value), 0);
+    
     return (
         <StyledContainer>
             <header>

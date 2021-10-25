@@ -9,9 +9,11 @@ const createHeaders = (token) => {
 const signUp = (body) => axios.post(`${API_URL}/sign-up`, body);
 const logIn = (body) => axios.post(`${API_URL}/log-in`, body);
 const getWallet = (token) => axios.get(`${API_URL}/wallet`, createHeaders(token));
+const postWallet = ({ body, token }) => axios.post(`${API_URL}/wallet`, body, createHeaders(token));
 
 export {
     signUp,
     logIn,
-    getWallet
+    getWallet,
+    postWallet,
 }
