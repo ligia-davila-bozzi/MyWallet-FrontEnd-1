@@ -24,7 +24,7 @@ export default function LogIn() {
            const reponse = window.confirm(`Você deseja continuar como ${userName}?`);
             if (reponse) history.push("/carteira"); else localStorage.removeItem("session");
         }
-    })
+    },[]);
 
     function errorAlert(error) {
         if (error.status === 404) {
